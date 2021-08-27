@@ -11,14 +11,17 @@
 - Iterator Pattern
 - State Pattern
 - Mediator Pattern
+
 [Creation Pattern]
 - Factory Method & Abstract Factory Pattern
 - Builder Pattern
 - Singleton Pattern
+
 [Structural Pattern]
 - Decorator Pattern
 - Adapter Pattern
 - Composite Pattern
 - Bridge Pattern
+
 [Compound Pattern]
 - MVC
