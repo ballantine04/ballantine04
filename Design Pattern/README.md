@@ -5,20 +5,20 @@
 - 목차
 
 Behavior Pattern
--- Strategy Pattern
--- Observer Pattern
--- Template Pattern
--- Iterator Pattern
--- State Pattern
--- Mediator Pattern
+- Strategy Pattern
+- Observer Pattern
+- Template Pattern
+- Iterator Pattern
+- State Pattern
+- Mediator Pattern
 Creation Pattern
--- Factory Method & Abstract Factory Pattern
--- Builder Pattern
--- Singleton Pattern
+- Factory Method & Abstract Factory Pattern
+- Builder Pattern
+- Singleton Pattern
 Structural Pattern
--- Decorator Pattern
--- Adapter Pattern
--- Composite Pattern
--- Bridge Pattern
+- Decorator Pattern
+- Adapter Pattern
+- Composite Pattern
+- Bridge Pattern
 Compound Pattern
--- MVC
+- MVC
