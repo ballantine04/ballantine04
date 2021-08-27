@@ -5,7 +5,7 @@
 - 목차
 
 [Behavior Pattern]
-- Strategy Pattern
+-> Strategy Pattern
 - Observer Pattern
 - Template Pattern
 - Iterator Pattern
