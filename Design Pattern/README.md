@@ -46,7 +46,6 @@ public class Engine
 {
  . . . 
 }
-
 public class Car
 {
     Engine e = new Engine();  
@@ -64,12 +63,9 @@ public class Address
 {
  . . .
 }
-
 public class Person
 {
-
      private Address address;
-     
      public Person(Address address)
      {
          this.address = address;
