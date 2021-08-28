@@ -30,7 +30,8 @@
 
 
 
-[Composition vs Aggregation]
+Composition vs Aggregation
+---------------------------
 
 Composition: Aggregation의 특별한 경우인데, 이것을 "죽음의" 연관관계라고 부를 수도 있습니다. 강력하게 연관된 Aggregation이며, 자식 오브젝트는 자신의 라이프사이클을 가지지 않고, 부모 오브젝트가 소멸될 경우 자식 오브젝트도 함께 소멸됩니다.
 ![image](https://user-images.githubusercontent.com/69576676/131211555-84d97606-1cf6-4c69-9488-9440367729cc.png)
