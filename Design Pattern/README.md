@@ -37,9 +37,7 @@ Composition: Aggregation의 특별한 경우인데, 이것을 "죽음의" 연관
 
 public class Engine
 {
-
  . . . 
- 
 }
 
 public class Car
