@@ -37,12 +37,19 @@ Composition: Aggregation의 특별한 경우인데, 이것을 "죽음의" 연관
 
 public class Engine
 {
+
  . . . 
+ 
 }
+
 public class Car
+
 {
+
     Engine e = new Engine();
+    
     .......
+    
 }
 
 Aggregation: Association의 특별한 경우인데, 모든 오브젝트가 각자의 라이프사이클을 가지고 있으며, 한 오브젝트가 다른 오브젝트를 소유하고 있는 경우입니다.
