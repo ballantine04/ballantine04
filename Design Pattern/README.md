@@ -7,7 +7,7 @@ Category of GoF Patterns
 목차
 -------------------------
 
-[Behavior Pattern]
+##### Behavior Pattern
 - Strategy Pattern
 - Observer Pattern
 - Template Pattern
@@ -15,18 +15,18 @@ Category of GoF Patterns
 - State Pattern
 - Mediator Pattern
 
-[Creation Pattern]
+##### Creation Pattern
 - Factory Method & Abstract Factory Pattern
 - Builder Pattern
 - Singleton Pattern
 
-[Structural Pattern]
+##### Structural Pattern
 - Decorator Pattern
 - Adapter Pattern
 - Composite Pattern
 - Bridge Pattern
 
-[Compound Pattern]
+##### Compound Pattern
 - MVC
 
 
