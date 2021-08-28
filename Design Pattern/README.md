@@ -78,6 +78,9 @@ public class Person
 예를 들면, 선생님과 학생의 경우를 들 수 있습니다. 많은 학생이 한 선생님에게 Association를 가질 수 있고, 한 학생이 여러 선생님에게 Association를 가질 수도 있습니다. 하지만 이 관계에는 누가 누구를 소유하거나 하지는 않습니다. 각자가 생성/소멸을 독립적으로 합니다.
 
 
+protected ( 접근제한자 ) vs Public or Default
+---------------------------
+![image](https://user-images.githubusercontent.com/69576676/131215983-f37f2d93-5a94-4829-8282-a9cc25a3044b.png)
 
 
 Reference
