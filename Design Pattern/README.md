@@ -85,6 +85,26 @@ protected ( 접근제한자 ) vs Public or Default
 ---------------------------
 ![image](https://user-images.githubusercontent.com/69576676/131215983-f37f2d93-5a94-4829-8282-a9cc25a3044b.png)
 
+final 
+------
+#### - entity를 한번만 선언 가능
+#### - 상속을 하지 못하는 경우
+```java
+public final class MyFinalClass {...}
+public class ThisIsWrong extends MyFinalClass {...} // forbidden
+```
+#### - method 호출을 하지 못하는 경우
+```java
+public class Base {
+    public       void m1() {...}
+    public final void m2() {...}
+}
+
+public class Derived extends Base {
+    public void m1() {...}  // OK, overriding Base#m1()
+    public void m2() {...}  // forbidden
+}
+```
 
 Reference
 ----------
