@@ -41,6 +41,11 @@ State Pattern vs Strategy Pattern
 #### Strategy Pattern : encapsulate interchangeable behaviors.
 #### Both : Example of "Composition with Delegation". ( diffrence is one of intent. )
 
+Mediator Pattern vs Observer Pattern
+------------------------------------
+#### Mediater Pattern : encapsulate the communication. ( no resuable )
+#### Observer Pattern : Communication distributed by using observer and subject objects. ( resuable )
+
 Composition vs Aggregation
 ---------------------------
 
