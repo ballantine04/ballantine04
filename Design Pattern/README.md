@@ -50,6 +50,12 @@ Structural Pattern 비교
 ##### Composite Pattern : focus on representation not on decoration.
 ##### Decorator Pattern : add responsibilities to objects without subclassing.
 ##### Both : Recursive Composition
+### Bridge Pattern vs Adapter Pattern
+##### Bridge Pattern : let abstractions and implements vary independantly. ( up-front in a design ) ( make a zoo for beasts )
+ - Bridge can abstract a complex entity from its implementation.
+##### Adapter Pattern : make unrelated components work together. ( applied after they're designed )
+ - Adapter only abstracts a single interface.
+##### Both : hide the details of the underlying implementation. (encapsulation)
 
 
 
