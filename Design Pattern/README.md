@@ -32,8 +32,8 @@ Category of GoF Patterns
 Behavioral Pattern 비교
 ------------------------------------
 ### Template Pattern vs Strategy Pattern
-##### Strategy Pattern : use delegation to vary the entire algorithm.
-##### Template Pattern : use inheritance to vary part of an algorithm.
+- Strategy Pattern : use delegation to vary the entire algorithm.
+- Template Pattern : use inheritance to vary part of an algorithm.
 
 ### State Pattern vs Strategy Pattern 
 ##### State Pattern : encapsulate a state-based behavior.
