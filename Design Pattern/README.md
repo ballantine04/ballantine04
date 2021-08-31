@@ -44,6 +44,15 @@ Behavioral Pattern 비교
 ##### Mediater Pattern : encapsulate the communication. ( no resuable )
 ##### Observer Pattern : Communication distributed by using observer and subject objects. ( resuable )
 
+
+Creational Pattern 비교
+------------------------------------
+
+Structural Pattern 비교
+------------------------------------
+
+
+
 Composition vs Aggregation
 ---------------------------
 
