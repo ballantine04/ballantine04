@@ -37,10 +37,9 @@ Template Pattern vs Strategy Pattern
 
 State Pattern vs Strategy Pattern 
 ------------------------------------
-#### diffrence is one of intent.
 #### State : encapsulate a state-dependent behavior.
 #### Strategy : encapsulate an algorithm.
-#### Both : Example of "Composition with Delegation".
+#### Both : Example of "Composition with Delegation". ( diffrence is one of intent. )
 
 Composition vs Aggregation
 ---------------------------
