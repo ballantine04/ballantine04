@@ -35,8 +35,9 @@ Template Pattern vs Strategy Pattern
 #### Strategy : use delegation to vary the entire algorithm.
 #### Template : use inheritance to vary part of an algorithm.
 
-State Pattern vs Strategy Pattern ( diffrence is one of intent. )
+State Pattern vs Strategy Pattern 
 ------------------------------------
+#### diffrence is one of intent.
 #### State : encapsulate a state-dependent behavior.
 #### Strategy : encapsulate an algorithm.
 #### Both : Example of "Composition with Delegation".
