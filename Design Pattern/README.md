@@ -83,8 +83,8 @@ public class Person
 
 protected ( 접근제한자 ) vs Public or Default
 ---------------------------
-![image](https://user-images.githubusercontent.com/69576676/131215983-f37f2d93-5a94-4829-8282-a9cc25a3044b.png){: width="200" height="200"}
-<img src="https://user-images.githubusercontent.com/69576676/131215983-f37f2d93-5a94-4829-8282-a9cc25a3044b.png" width="200" height="200">
+#![image](https://user-images.githubusercontent.com/69576676/131215983-f37f2d93-5a94-4829-8282-a9cc25a3044b.png){: width="200" height="200"}
+<img src="https://user-images.githubusercontent.com/69576676/131215983-f37f2d93-5a94-4829-8282-a9cc25a3044b.png" width="600" height="600">
 
 final 
 ------
