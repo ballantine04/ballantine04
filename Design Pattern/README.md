@@ -36,26 +36,26 @@ Behavioral Pattern 비교
 - Template Pattern : use inheritance to vary part of an algorithm.
 
 ### State Pattern vs Strategy Pattern 
-##### State Pattern : encapsulate a state-based behavior.
-##### Strategy Pattern : encapsulate interchangeable behaviors.
-##### Both : Example of "Composition with Delegation". ( diffrence is one of intent. )
+- State Pattern : encapsulate a state-based behavior.
+- Strategy Pattern : encapsulate interchangeable behaviors.
+- Both : Example of "Composition with Delegation". ( diffrence is one of intent. )
 
 ### Mediator Pattern vs Observer Pattern
-##### Mediater Pattern : encapsulate the communication. ( no resuable )
-##### Observer Pattern : Communication distributed by using observer and subject objects. ( resuable )
+- Mediater Pattern : encapsulate the communication. ( no resuable )
+- Observer Pattern : Communication distributed by using observer and subject objects. ( resuable )
 
 Structural Pattern 비교
 ------------------------------------
 ### Composite Pattern vs Decorator Pattern
-##### Composite Pattern : focus on representation not on decoration.
-##### Decorator Pattern : add responsibilities to objects without subclassing.
-##### Both : Recursive Composition
+- Composite Pattern : focus on representation not on decoration.
+- Decorator Pattern : add responsibilities to objects without subclassing.
+- Both : Recursive Composition
 ### Bridge Pattern vs Adapter Pattern
-##### Bridge Pattern : let abstractions and implements vary independantly. ( up-front in a design ) ( make a zoo for beasts )
- - Bridge can abstract a complex entity from its implementation.
-##### Adapter Pattern : make unrelated components work together. ( applied after they're designed )
- - Adapter only abstracts a single interface.
-##### Both : hide the details of the underlying implementation. (encapsulation)
+- Bridge Pattern : let abstractions and implements vary independantly. ( up-front in a design ) ( make a zoo for beasts )
+-- Bridge can abstract a complex entity from its implementation.
+- Adapter Pattern : make unrelated components work together. ( applied after they're designed )
+-- Adapter only abstracts a single interface.
+- Both : hide the details of the underlying implementation. (encapsulation)
 
 
 
