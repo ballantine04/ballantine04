@@ -32,8 +32,8 @@ Category of GoF Patterns
 
 Strategy Pattern vs Template Pattern
 ------------------------------------
-##### Strategy : use delegation to vary the entire algorithm.
-##### Template : use inheritance to vary part of an algorithm.
+#### Strategy : use delegation to vary the entire algorithm.
+#### Template : use inheritance to vary part of an algorithm.
 
 Composition vs Aggregation
 ---------------------------
