@@ -32,19 +32,17 @@ Category of GoF Patterns
 Behavioral Pattern 비교
 ------------------------------------
 ### Template Pattern vs Strategy Pattern
-#### Strategy Pattern : use delegation to vary the entire algorithm.
-#### Template Pattern : use inheritance to vary part of an algorithm.
+##### Strategy Pattern : use delegation to vary the entire algorithm.
+##### Template Pattern : use inheritance to vary part of an algorithm.
 
-State Pattern vs Strategy Pattern 
-------------------------------------
-#### State Pattern : encapsulate a state-based behavior.
-#### Strategy Pattern : encapsulate interchangeable behaviors.
-#### Both : Example of "Composition with Delegation". ( diffrence is one of intent. )
+### State Pattern vs Strategy Pattern 
+##### State Pattern : encapsulate a state-based behavior.
+##### Strategy Pattern : encapsulate interchangeable behaviors.
+##### Both : Example of "Composition with Delegation". ( diffrence is one of intent. )
 
-Mediator Pattern vs Observer Pattern
-------------------------------------
-#### Mediater Pattern : encapsulate the communication. ( no resuable )
-#### Observer Pattern : Communication distributed by using observer and subject objects. ( resuable )
+### Mediator Pattern vs Observer Pattern
+##### Mediater Pattern : encapsulate the communication. ( no resuable )
+##### Observer Pattern : Communication distributed by using observer and subject objects. ( resuable )
 
 Composition vs Aggregation
 ---------------------------
