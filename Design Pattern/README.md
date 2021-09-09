@@ -67,6 +67,15 @@ Creational Pattern 비교
 ### Builder
 - Concrete Director knows how to create products.
 
+### Decorator
+- OCP
+- attaches additional responsibilities to an object dynamically
+- use object composition and delegation
+
+
+
+
+# 개념정리
 Composition vs Aggregation
 ---------------------------
 
