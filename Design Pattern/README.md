@@ -47,8 +47,8 @@ Behavioral Pattern 비교
 Structural Pattern 비교
 ------------------------------------
 ### Composite Pattern vs Decorator Pattern
-- Composite Pattern : focus on representation not on decoration.
-- Decorator Pattern : add responsibilities to objects without subclassing.
+- Composite Pattern : focus on representation not on decoration. ( ex. Tree구조 menu/menuitem )
+- Decorator Pattern : add responsibilities to objects without subclassing. ( ex. Append 
 - Both : Recursive Composition
 ### Bridge Pattern vs Adapter Pattern
 - Bridge Pattern : let abstractions and implements vary independantly. ( up-front in a design ) ( make a zoo for beasts )
