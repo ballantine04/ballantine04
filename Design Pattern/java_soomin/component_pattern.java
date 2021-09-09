@@ -119,7 +119,7 @@ class Waitress {
     }
 }
 
-public class adapter_pattern{
+public class component_pattern{
     public static void main(String[] args) {
 
         // MID-LEVEL MENU
