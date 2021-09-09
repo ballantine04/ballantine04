@@ -53,7 +53,7 @@ class Whip extends CondimentDecorator {
     }
 }
 
-public class factory_p{
+public class decorator_pattern{
     public static void main(String[] args) {
 
         // beverage1
