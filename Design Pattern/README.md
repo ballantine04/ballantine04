@@ -57,7 +57,15 @@ Structural Pattern 비교
   - Adapter only abstracts a single interface.
 - Both : hide the details of the underlying implementation. (encapsulation)
 
+Creational Pattern 비교
+--------------------------
+### Factory Method vs Abstract Factory (참고: https://whereami80.tistory.com/211)
+- DIP ( Depend on absstractions, not concrete classes )
+- Factory: let subclasses decide which object to create ( use inheritance )
+- Abstract Factory: subclass dicide families of realated objects ( use object composition & delegation )
 
+### Builder
+- Concrete Director knows how to create products.
 
 Composition vs Aggregation
 ---------------------------
