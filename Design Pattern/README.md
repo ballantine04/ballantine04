@@ -59,10 +59,11 @@ Structural Pattern 비교
 
 Creational Pattern 비교
 --------------------------
-### Factory Method vs Abstract Factory (참고: https://victorydntmd.tistory.com/300 https://whereami80.tistory.com/211)
+### Factory Method vs Abstract Factory (참고: https://defacto-standard.tistory.com/42 https://victorydntmd.tistory.com/300 https://whereami80.tistory.com/211)
 - DIP ( Depend on absstractions, not concrete classes )
 - Factory: let subclasses decide which object to create ( use inheritance )
 - Abstract Factory: subclass dicide families of realated objects ( use object composition & delegation )
+
 
 ### Builder
 - Concrete Director knows how to create products.
