@@ -1,3 +1,6 @@
+OOP,OOAD,UML 정리(김인수)
+--------------------------
+
 [2장. Object-Oriented Principles]
 
 추상화 (abstraction) - 필요한 정보만을 취한다
