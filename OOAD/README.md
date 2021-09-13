@@ -1,7 +1,7 @@
 OOP,OOAD,UML 정리(김인수)
 --------------------------
 
-[2장. Object-Oriented Principles]
+# [2장. Object-Oriented Principles]
 
 추상화 (abstraction) - 필요한 정보만을 취한다
 캡슐화 (encapsulation) - 정보를 숨긴다
@@ -13,7 +13,7 @@ OOP,OOAD,UML 정리(김인수)
 추상클래스는 필요한 값은 다 있지만 new로 생성하지 않는다. 인터페이스만 정의
 
 
-[3장. Object-Oriented Development]
+# [3장. Object-Oriented Development]
 
 절차적언어(procedural programming) : C, fortran >>> SASD
 객체지향언어(Object-Oriented programming) : C++ , Java, Ada  >>> OOAD
@@ -41,7 +41,7 @@ UP (Unified Process)
  - UML 기반
 
 
-[4장. Introduce to UML]
+# [4장. Introduce to UML]
 UML (Unified Modeling Language) 
  - 13가지 모델링 언어
  - OML 에서 정의함
@@ -75,7 +75,7 @@ UML Semantics (의미론)
  - timing : object의 행동에 따른 상태를 표현
 
 
-[5장. Usecase Diagram]
+# [5장. Usecase Diagram]
 usecase 정의 : 사용자의 목적을 달성위한 텍스트 스토리. 다이어그램이 아님
 usecase 레벨 : brief -> casual -> fully dressed
 
@@ -101,7 +101,7 @@ UP에서는 유즈케이스로 Functional Requrement 를 대체
  - BlackBox 스타일 (자유도 높음)
 
 
-[6장. Class Diagram]
+# [6장. Class Diagram]
 OOA(domain model) ,OOD(design class diagram)
   
 Object 
@@ -110,10 +110,10 @@ Object
  - classname / attributes/ operations
  
 Attribute Syntax
- + public (operation default)
- - private (attribute default)
- # protected
- ~ pasckage
+ (+) public (operation default)
+ (-) private (attribute default)
+ (#) protected
+ (~) pasckage
 
  derived attribute : 다른 값에서 계산해서 가져옴. (ex. age)
  Data type : pre define, user define, composite (구조체)
@@ -138,7 +138,7 @@ class relationship 타입 -- 상세예제 교재 참조
  (강함)
   
 
-[7장. Sequence Diagram]
+# [7장. Sequence Diagram]
 behaviour 하위의 interaction 하위의 sequence
 
 소스코드의 operation을 채우기 위해서는 sequence 다이어그램이 필요하다.
@@ -164,7 +164,7 @@ Fragment
 유즈케이스 -> 시퀀스다이어그램 -> 클래스다이어그램 순으로 작성해야한다
 
 
-[8장. Statechart Diagram] (=State Machine Diagram)
+# [8장. Statechart Diagram] (=State Machine Diagram)
 Final state machine 과 동일한 내용을 표현
 Activity 다이어그램과 그리는 방식이 반대
 State 의 이름이 중요 (현재의 상태값)
@@ -191,7 +191,7 @@ state 종류
       H :  shallow history (현재와 같은 레벨로 복귀)
 
 
-[9장. Activity Diagram]
+# [9장. Activity Diagram]
 시스템 액션의 흐름을 보여줌
 시스템 내부의 method/function 운영흐름을 보여줌
 데이터의 흐름을 보여주지는 않음
@@ -205,7 +205,7 @@ bar(바) 를 만나면 분기
 세로선(swimlanes) - 상단에 어떤객체가 수행하는지 표현 (잘 쓰지는 않음), 가로선으로 해도 동일함
 
 
-[10장. Component Diagram]
+# [10장. Component Diagram]
 컴포넌트 : 독립적인 개발의 단위, 관련 클래스의 모음, 하위에 컴포넌트도 가능
 표현 : <<component>> 콘센트모양
 
@@ -228,7 +228,7 @@ required interface : '(' 방향으로 들어감, 롤리팝?, FeedProvider, Displ
  - Delegation connector : 컴포넌트 외부와 내부를 연결
 
 
-[11장. OOAD-introduce]
+# [11장. OOAD-introduce]
 chapter1
 OOA : concept/object, requirement (usecase) 
          define domain model
@@ -278,7 +278,7 @@ UP disciplines (분야) 9가지
 Deveolpment Case : Phases 마다 어떤 disciplines 을 적용할지 선택 (모든걸 다하지는 못함) 
 
 
-[11장. OOAD-inception]
+# [12장. OOAD-inception]
 chapter4
 inception 은 요구사항도출만 하는 단계가 아님. 아주 간략히 도출(brief 수준)
 
@@ -315,7 +315,7 @@ elaboration 에서 최종 정의
 
 
 
-[13장. Elaboration-OOA]
+# [13장. Elaboration-OOA]
 elaboration 
 미니waterfall (OOA,OOD,OOI) -> 워크샵(아키택처, 클라이언트 등 이해관계자 참석)
 를 3주동안 반복수행
@@ -366,7 +366,7 @@ Elaboration 마지막에 operation 이 확정되면 그때 작성
  - postconditions (유즈케이스 내용과 유사)
 
 
-[14장. Elaboration-OOD]
+# [14장. Elaboration-OOD]
 chapter12. requirements to disign iteratively
 
 chapter13. logical architecture and UML package diagram
@@ -401,7 +401,7 @@ object design skill 은 매우 어렵다 >> 참고자료 필요
      문제해결방안 예제. Reuse 를 목적으로 사용
 
 
-[15장. Elaboration-OOI]
+# [15장. Elaboration-OOI]
 chapter19. designing for visibility
 A->B 로 통신하려면 A에서 B가 보여야 함
 
@@ -422,7 +422,7 @@ class diagram에서 시작 -> code generation -> skeletion code -> sequence diam
 dependancy 가 없는 것부터 만들기 시작
 
 
-[16장. OOAD summary]
+# [16장. OOAD summary]
 1. OOA : 유즈케이스 정의 , 도메인모델 정의
 2. OOD : 유즈케이스 -> interacion diagram 생성
          interaciton diagrm, domain model -> class diagram 생성
