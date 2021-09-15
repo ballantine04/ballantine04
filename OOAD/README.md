@@ -3,37 +3,36 @@ OOP,OOAD,UML 정리(김인수)
 
 # [2장. Object-Oriented Principles]
 
-추상화 (abstraction) - 필요한 정보만을 취한다
-캡슐화 (encapsulation) - 정보를 숨긴다
-계승 (inheritance) - 일반화. is-a
-다형성 (polymorphism) - composition을 통해서 polymorphism을 구현
-구성 (composition) - has-a. 런타임에 dynamic하게 object를 호출
+- 추상화 (abstraction) - 필요한 정보만을 취한다
+- 캡슐화 (encapsulation) - 정보를 숨긴다
+- 계승 (inheritance) - 일반화. is-a
+- 다형성 (polymorphism) - composition을 통해서 polymorphism을 구현
+- 구성 (composition) - has-a. 런타임에 dynamic하게 object를 호출
 
-16page (중요예제)
-추상클래스는 필요한 값은 다 있지만 new로 생성하지 않는다. 인터페이스만 정의
+#### 16page (중요예제) - 추상클래스는 필요한 값은 다 있지만 new로 생성하지 않는다. 인터페이스만 정의
 
 
 # [3장. Object-Oriented Development]
 
-절차적언어(procedural programming) : C, fortran >>> SASD
-객체지향언어(Object-Oriented programming) : C++ , Java, Ada  >>> OOAD
+- 절차적언어(procedural programming) : C, fortran >>> SASD
+- 객체지향언어(Object-Oriented programming) : C++ , Java, Ada  >>> OOAD
 
-SASD (Structured Analysis and Structured Design)
+#### SASD (Structured Analysis and Structured Design)
  - 알고리즘, Data Structure 중요 (글로벌로 선언하여 여기저기서 사용)
  - 탑다운, 분할 및 정복, DFD(Data flow diagram)
 
-OOAD (Object-Oriented Analysis Design)
+#### OOAD (Object-Oriented Analysis Design)
  - object communication 을 통한 
  - OOA (컨셉/object 찾기, 요구분석, Usecase 다이어그램)  
  - OOD (sequences 다이어그램 -> class 다이어그램)
 
-11page (중요예제)
+#### 11page (중요예제)
 
-Software Process Medel
+#### Software Process Medel
  - waterfall : 점진적
  - iterative : 반복적, aglie
 
-UP (Unified Process) 
+#### UP (Unified Process) 
  - 모든 방법론을 다 통합, OOAD의 defacto 표준
  - 미니 waterfall주기는 3week             
  - risk-driven (아키택처), client-driven, architecture-centric, usecase-driven
@@ -42,22 +41,22 @@ UP (Unified Process)
 
 
 # [4장. Introduce to UML]
-UML (Unified Modeling Language) 
+#### UML (Unified Modeling Language) 
  - 13가지 모델링 언어
  - OML 에서 정의함
  - ERD, 비지니스모델링, 오브젝트모델링, 컴포넌트 모델링 등 다양하게 사용
 
-UML Grammer = Syntax + Semantics
+#### UML Grammer = Syntax + Semantics
 
-UML Semantics (의미론)
+#### UML Semantics (의미론)
  - 4 Layer (instance -> model -> meta model -> meta-meta model)  
  - M3 meta-meta model : 탬플릿, .NET 프레임워크
-   M2 meta model (모델을 정의)
-   M1 model (UML 그리기)
-   M0 information (Application)
+ - M2 meta model (모델을 정의)
+ - M1 model (UML 그리기)
+ - M0 information (Application)
 
-13 UML diagrams (2.2 까지 있으며 일반적으로 2.0을 사용)
- (Structure Diagram)
+#### 13 UML diagrams (2.2 까지 있으며 일반적으로 2.0을 사용)
+#### (Structure Diagram)
  - *class : 대문자, OOA(domain model) ,OOD(design class diagram) 둘다 사용
  - object : 소문자/밑줄 , object명:클래스명, 특정시간의 object 상태 정의가 필요한 경우에만 사용 (snapshot)
  - package : 좌상단 박스에 패키지명, class 의 모음, 논리적 아키텍처, 후반부에 사용됨
@@ -65,7 +64,7 @@ UML Semantics (의미론)
  - composite structure : 컴포넌트 다이어그램을 계층적으로 표현한 구조 (컴포넌트 내부에 컴포넌트)
  - deployment : SW컴포넌트가 동작할 HW node 까지 표현
 
- (Behaviour Diagram)
+#### (Behaviour Diagram)
  - activity : flowcharts, data-flow-diagram. 각 state 내부에서 동작함
  - *use case : 각 유즈케이스별 설명 (상세 시나리오 txt) 이 중요. 각 state 간  화살표에서 동작함
  - state machine : 객체의 상태에 따라서 객체의 이벤트가 어떻게 동작하는지 표현
@@ -76,66 +75,65 @@ UML Semantics (의미론)
 
 
 # [5장. Usecase Diagram]
-usecase 정의 : 사용자의 목적을 달성위한 텍스트 스토리. 다이어그램이 아님
-usecase 레벨 : brief -> casual -> fully dressed
+#### usecase 정의 : 사용자의 목적을 달성위한 텍스트 스토리. 다이어그램이 아님
+#### usecase 레벨 : brief -> casual -> fully dressed
 
-usecase diagram : actor 와 usecase 를 선으로 연결
-                       usecase 를 클릭시 text 설명을 확인
+#### usecase diagram : actor 와 usecase 를 선으로 연결, usecase 를 클릭시 text 설명을 확인
 
-추가설명 :
-시스템의 바운더리를 정의 가능
-Actor 를 사람그림 말고 <<Actor>> 로 하라는 경우도 있음
+#### 추가설명 :
+#### 시스템의 바운더리를 정의 가능
+#### Actor 를 사람그림 말고 << Actor >> 로 하라는 경우도 있음
 
-3가지 포멧
+#### 3가지 포멧
  - brief : 시나리오간 구분 없음
  - casual : Main / Alternate / Exceptional 시나리오를 구분
  - fully dressed : 모든 step을 다 표현 (Preconditions등)
 
-UP에서는 유즈케이스로 Functional Requrement 를 대체
- SRS 
+#### UP에서는 유즈케이스로 Functional Requrement 를 대체
+####  SRS 
   - F : 유즈케이스 다이어그램
   - NF : 나머지 다이어그램
 
-가이드라인
+#### 가이드라인
  - Essential 스타일 (자유도 높음) ↔ Concreate
  - BlackBox 스타일 (자유도 높음)
 
 
 # [6장. Class Diagram]
-OOA(domain model) ,OOD(design class diagram)
+#### OOA(domain model) ,OOD(design class diagram)
   
-Object 
+#### Object 
  - 소문자object명:class명
  - operation 은 없음. attribute 만 표기
  - classname / attributes/ operations
  
-Attribute Syntax
+#### Attribute Syntax
  (+) public (operation default)
  (-) private (attribute default)
  (#) protected
  (~) pasckage
 
- derived attribute : 다른 값에서 계산해서 가져옴. (ex. age)
- Data type : pre define, user define, composite (구조체)
- multiplicity : 여러 값이 올수 있음
- default value
- properties : 상세 특성 (ex. readonly)
- parameters : in/out/inout (아무것도 없으면 디폴트로 in)
+ #### derived attribute : 다른 값에서 계산해서 가져옴. (ex. age)
+ #### Data type : pre define, user define, composite (구조체)
+ #### multiplicity : 여러 값이 올수 있음
+ #### default value
+ #### properties : 상세 특성 (ex. readonly)
+ #### parameters : in/out/inout (아무것도 없으면 디폴트로 in)
 
-Operation Method
- operation 을 코드로 구현하면 method
- class variable,operation : static으로 표기
- getter , setter
- Note symbols : 우측 상단에 살짝 접힌 모양. 커멘트, 수도코드, method body 등
+#### Operation Method
+- operation 을 코드로 구현하면 method
+- class variable,operation : static으로 표기
+- getter , setter
+- Note symbols : 우측 상단에 살짝 접힌 모양. 커멘트, 수도코드, method body 등
 
-class relationship 타입 -- 상세예제 교재 참조
- (약함)
- dependency : 점선화살표, 한번 연계되고 소멸, 주로 component 다이어그램에서 사용
- association (default) : 실선
- aggregation : 실선에 하얀 마름모, share reference
- composition : 실선에 까만 마름모, contain
- inheritance : 실선에 삼각화살표, 상속
- (강함)
+#### class relationship 타입 -- 상세예제 교재 참조
+- (약함)
+- dependency : 점선화살표, 한번 연계되고 소멸, 주로 component 다이어그램에서 사용
+- association (default) : 실선
+- aggregation : 실선에 하얀 마름모, share reference
+- composition : 실선에 까만 마름모, contain
+- inheritance : 실선에 삼각화살표, 상속
+- (강함)
   
 
 # [7장. Sequence Diagram]
