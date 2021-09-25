@@ -1,0 +1,664 @@
+# [1장. 설계패턴 소개]
+□ 배경
+ - 패턴 : 맥락에서 문제를 해결위한 솔루션
+ - 건축에서 시작 -> IT에 접목
+ - Gang of Four 에서 디자인 패턴의 개념이 만들어짐
+
+□ 장점
+ - 재사용
+ - 잘 만들어진, 유연한, 재사용가능한
+ - 개발자간 의사소통 수단
+ - 누군자 해결한 솔루션을 활용
+
+□ 구성 : context, problem, solution
+
+□ 예시 (iterator)
+ - context : 객체의 집합이 있음
+ - problem : 집합의 구현을 노출하지 않고 객체 운영필요
+ - solution : 반복을 캡슐화
+
+□ 목적으로 구분
+ - Creational : 유연하게 생성, 생성/사용을 분리
+ - Structural : 클래스와 객체를 조직화
+ - Behavioral : 클래스간 관계,통신을 정의
+
+□ scope로 구분
+ - class
+ - object
+
+□ 디자인 패턴의 주요기능
+ - 아키택처패턴 : 시스템 전체가 대상
+ - 디자인 패턴 : 서브시스템, 컴포넌트 대상. 전체 구조에 영향끼치지 않는다.
+ - 코딩 패턴 : low-level, programming language
+
+
+# [2장. 객체지향 패러다임]
+□ Abstract Data Type (ADT) : 데이터를 추상화 해서 단일 구성 유닛으로
+ -> 클래스 개념이 여기서 파생됨
+ 
+□ Class = ADT + Inheritance(재사용성) + Polymorphism(유연성)
+ -> 클래스 내부 뿐 아니라 클라이언트 코드도 재사용 가능한지가 더 중요함
+ 
+□ Inheritance (Y -> X)  
+ - Y는 X의 모든 매소드/데이터 상속받음 >> Y는 X이다 >> X타입이 되는곳은 모두 Y타입으로 대체가능
+  
+□ Polymorphism (다형성. 오퍼레이션이 다른 방식으로 구성될 수 있다)
+ - Runtime polymorphism : 오버라이딩 - 하위 클래스에서 상위 클래스의 매소드를 사용/재정의 가능
+ - Compile polymorphism : 오버로딩 - 같은 이름의 다른 매개변수를 가진 매소드
+
+□ Runtime polymorphism (Y -> X) 일때
+ - X a = new X() 이라면
+ - X b = new Y() 가능
+ - Y c = new X() 불가능
+
+ - 런타임에 자기에게 맞는 메소드를 바인딩한다
+ - 개발 및 유지보수에 유용
+
+□ abstract Class / Method
+ - 추상매소드는 body가 없음
+ - 추상클래스는 abstract 키워드로 선언
+ - abstract 매소드를 하나라도 가지면 abstract 클래스여야 한다 (반대는아님)
+ - 추상클래스는 인스턴스를 만들 수 없다
+ - 추상클래스 타입의 변수도 하위의 일반클래스를 가리킬 수 있다
+
+□ 어떤 매소드가 실행도록 만드는지 결정
+ 1. 현재 클래스에 매소드가 있으면 실행
+ 2. 없으면 상위 클래스로 찾아 올라감
+ 3. 만약 최상위까지 올라가도 없는것은 불가능 (컴파일 에러)
+ 
+□ Interface란?
+ - 모든 매소드는 추상
+ - 인스턴스값을 가질 수 없음
+ - public static final variable 은 가질 수 있다.
+ - 추상클래스보다도 더 추상적
+ - interface 키워드로 정의
+ - implements 키워드로 상속받음
+
+□ 추상클래스와 인터페이스 비교
+ - 가능하면 인터페이스를 사용하라
+ - 추상클래스를 사용하는 경우 : 부모자식관계, 부분적인 implementation을 써야 하는 경우
+ - 인터페이스를 사용하는 경우 : 대부분
+
+□ 상위레벨의 인스턴스일수록 다양한 타입의 인스턴스를 가리킬 수 있어서 범용으로 사용 가능
+  하지만 무조건 상위 인스턴스를 사용하지 않는 이유는 (java의 경우 object)
+  적절한 권한이나 능력을 가진것을 사용하기 위함
+
+□ 클래스간 관계
+ - 상위클래스의 변경은 하위 클래스로 영향을 줌
+ - 반대로 하위클래스의 변경은 상위 클래스에 영향 
+ - 가능하면 변경에 대한 영향이 적도록 디자인 (추상/인터페이스 활용)
+
+□ 정보은닉
+ - 외부와 연결되는 것은 인터페이스 등으로 하고
+ - 하위의 변경을 외부에 보여지지 않도록 함
+
+# [3장. SOLID Principle]
+□ Disign Smell : 나쁜 디자인의 징후
+ - 경직성(Rigidity), 취약성(Fragility), 부동성(Immobility), 점착성(Viscosity), 
+ - 불필요한 복잡성(Needless complexity), 불필요한 반복(Needless Repetition), 불투명성(Opacity)
+ - 원인 : 잘못된 Dependencies
+ - 해결 : 설계원칙을 준수
+
+□ OOD Principles
+ - SOLID, GRASP 등
+ 
+□ SOLID 
+ - Single-Responsibility (SRP) 단일책임
+ - Open-Closed (OCP) 개방폐쇄
+ - Liskov Substitution (LSP) 리스코프치환
+ - Interface Segregation (ISP) 인터페이스 분리
+ - Dependency Inversion (DIP) 의존성 역전
+
+□ SRP
+ - responsibility : 클래스가 해야 할 의무/일
+ - 많은 책임 > 많은 변경 > 많은 버그
+ - Cohesion : 응집도
+ - 클래스 내 불필요한 기능은 별도로 분리필요
+ - 단, 초기에는 기능이 분리가 필요한지 판단이 어려움
+ - 그래서 무분별한 SRP는 문제가 될 수 있다 (class 수 증가, cost 증가) > 꼭 필요한 경우만 사용
+
+□ OCP
+ - 확장은 열려(open) 있고, 변경은 닫혀(closed) 있어야 함
+ - 경직성(Rigidity), 취약성(Fragility), 부동성(Immobility) 등의 Disign smell 을 제거 필요
+ - 해결을 위해서는 Abstraction (추상성) 이 중요
+ - 인터페이스나 추상클래스를 활용
+ - OCP구현을 위해서는 시간 및 비용이 증가 
+ - 전략이 필요 : 변화를 추측, 모든 변화를 미리 대응하지 말고 변화가 발생하면 대응
+
+□ LSP
+ - 서브 클래스는 부모 클래스를 대체할 수 있어야 한다
+ - subtyping : 단순히 IS-A 관계, 인터페이스 상속
+ - Implementation Inheritance (상속구현) : 타입에는 영향없이 상속만 한다, 코드 상속
+ - 일반적으로는 subtyping과 Implementation Inheritance 는 동시에 이뤄짐
+ - List 와 Queue 의 관계에서 상속을 사용하면 LSP 위반 >> 상속대신 객체간 합성으로 구현
+ - 애초에 LSP를 어기는 상속관계의 설계를 하지 말아야 함
+ 
+□ DIP
+ - 상위레벨이 하위레벨에게 의존관계를 가지는것은 안된다
+ - 역전이 발생하는 일반클래스가 직접 연결되지 않도록 중간에 추상/인터페이스 를 배치
+ - 인터페이스는 그것을 사용하는 클라이언트가 Ownership 을 가지고 있어야 한다
+ - 의존관계 역전이 발생한 경우 인터페이스를 사용해서 올바른 의존관계로 전환
+
+□ ISP
+ - 클라이언트는 자기가 사용하지 않는 매소드는 dependency를 가지면 안된다.
+ - 인터페이스를 세분화 하여 사용
+ - 인터페이스가 너무 커지고 여러곳에서 참조한다면 클라이언트는 불필요한 매소드를 가짐
+ - 따라서 인터페이스를 작은 그룹으로 분할
+
+# [4장. GRASP Principle]
+□ General Responsibility Assignment Software Patterns
+ - 설계패턴이지만 설계 원칙으로 분류
+ - OOAD에서 디자인모델을 생성 시 responsibility를 어떻게 배정하고 object를 어떻게 협력할지 가이드 제공
+ - 9가지 원칙
+
+□ responsibility (책임)
+ - 객체간 계약
+ - 2가지 종류 : Knowing , Doing
+
+□ Modularity (모듈성)
+ - 측정방법 : coupling(결합도, 낮을수록 좋음), cohesion(응집도, 높을수록 좋음)
+
+□ Coupling 형태
+ - attribute referncing
+ - method referencing
+ - subclass 
+ - implements interface
+
+□ Cohesion : 관련된것만 모여있으면 응집도가 높음
+ - SRP와 연관성 높음
+ - 높은응집도 : 재사용, 이해도, 낮은결합도 에 영향
+
+□ 1. Creator 패턴
+ - 누가 만들것인가
+ - B는 A를 포함, A를 레코드, A를 긴밀히 사용, A의 초기데이터 가짐 >> B가 A를 생성
+ - Low 커플링의 효과
+ 
+□ 2. Information Expert 패턴
+ - object를 누구에게 배정할 것인가
+ - 해당 정보를 가지고 있는 클래스에 배정
+ - Separation of Concerns 과 충돌되는 경우가 있음
+ - Low 커플링의 효과
+
+□ 3. Controller 패턴
+ - UI레이어를 컨트롤하는 첫번째 객체는 누가 되야 하는가
+ - 시스템전체를 대표하는 객체에 할당 or 특정 세션을 담당하는 객체를 별도로 지정
+ - 컨트롤 클래스가 너무 많은 책임 >> 컨트롤러를 여러개 만든다, 위임을 한다
+ - 재사용성을 높일수 있다.
+
+□ 4. Low Coupling 패턴
+ - 변화의 영향을 적게 주는 방법은?
+ - 여러 선택지 중 커플링이 낮은것을 선택.
+ - 대체재를 평가하는데 사용
+ - 글로벌객체와의 커플링은 무관하다. (SW내부적으로만 고민)
+
+□ 5. High Cohesion 패턴
+ - 어떻게 object를 집중/이해쉽게/관리편하게/side effect적게/낮은 커플링 할수 있나
+ - 응집도가 높은 것에 resposiblility 배정
+
+□ 6. Pure Fabrication 패턴
+ - 기존에 없던 클래스를 디자인 단계에서 만들어내는것
+
+□ 7. Polymorphism 패턴
+ - 다형성을 가진 클래스 구현
+ - 쉽고 신뢰성있는 클래스 구현
+ - 클래스 수 많아짐, 이해 어려울 수 있음
+
+□ 8. Indirection 패턴
+ - 직접적인 커플링을 해소위해 중재 개체를 둠
+ - 낮은 커플링 구현 가능
+
+□ 9. Protected Variations 패턴
+ - stable 한 인터페이스를 구현하여 변화로부터 보호
+
+
+# [5장. Sterategy(전략) 패턴]
+□ 목적
+ - 알고리즘을 캡슐화하여 특정 기능을 수행할 수 있도록 함
+
+□ 요약
+ - class를 전략인터페이스와 composition 하고 개별 클래스는 인터페이스와 연동시킨다
+ 
+□ 디자인
+ - 요구사항 중 고정된 부분, 변동될 부분을 구분, 모든 클래스별로 다른 기능 등으로 구분
+ - 로컬 업데이트는 사이트 이펙트 있음. 재사용목적의 상속은 유지보수가 어려움
+ - 변하는것과 변하지 않는것을 분리
+ - 변하는 기능을 캡슐화하여 variation 를 포괄하는 interface를 만든다
+ - 상속을 사용하지 말고 컴포지션으로 인터페이스를 통해 구현 
+
+□ 프로그램 구현
+ - 상위 타입(포괄적)의 객체를 하위 타입(특정feature)의 클래스로 생성
+   Animal a = new Dog()
+   Animal a = getAnimal("Dog");  >> 팩토리 패턴
+ - Object composition : 인터페이스
+ - delegation : 클래스
+
+□ Inheritance
+ - class -- implementation -- class
+ - 화이트박스 reuse
+ - 클라스간 종속적이라 재사용 어려움
+ 
+□ Composition
+ - class -- 컴포지션 -- 인터페이스 -- implementation -- class
+ - 블랙박스 reuse
+ - 이해가 다소 어려움
+
+
+# [6장. Observer 패턴]
+□ 변화에 대한 notification을 받고 싶을때 사용
+ - Publisher(출판) : subscribe (구독) = Subject : Observer
+ - 구독하는 경우 통보받고 구독 해제 시 통보 제외된다
+ - 1 to many 형태
+
+□ 구조
+ - subject : add(), delete(), notify()
+ - observer : update()
+
+□ 디자인
+ - Loose Coupling
+ - 서로 통신은 하지만 서로에 대한 지식은 매우 적다. >> 변경에 대한 영향이 작다
+
+□ Java 에서 제공하는 Observer 클래스
+ - Observeable 클래스 (add, delete, notify 가 이미 구현되어 있음)
+    : SetChanged() 이후 notifyObserver()
+ - Observer 인터페이스 (update 가 이미 구현되어 있음)
+    : addObserver 호출 통해 구독, deleteObserver 호출 통해 구독해제, update 매소드
+ - Setchanged()는 업데이트 호출을 제어하는 장치
+ - import java.util.observable, java.util.observer 필요
+
+# [7장. Template Method 패턴]
+□ 목적
+ - 프레임워크를 구성에 활용
+ - 실제 behavior 가 하위 클래스에서 implement 되도록 함
+ - 알고리즘의 skeletion(골격)을 정의
+ - 알고리즘의 variation을 suppot 하는 역할
+
+□ 디자인
+ - 클래스에서 공통으로 사용하는 부분을 상위 클래스에서 정의
+ - 개별로 달라지는 부분은 추상매소드로 정의
+ - subclass 에서 implement 하여사용
+ - 전체 구조를 변경하지 않느 선에서 필요하다면 subclass 에서 redifine 가능
+ 
+□ 이점
+ - 클래스를 보호하고 컨트롤 용이
+ - 재사용성 높아짐
+ - 코드의 변화는 한곳에서만
+ - 쉽게 추가 가능
+
+□ Hook Method
+ - 추상클래스에서 선언
+ - empty 혹은 기본값으로 implement
+ - 디폴트 흐름에서 특별한 변형을 호출하기 위한 장치
+ 
+□ Hollywood Principle
+ - high level 컴포넌트 -> log level 컴포넌트 호출은 OK (Hook 등을 이용)
+ - 반대는 불가
+ - 이러한 원칙으로 설계가 필요
+
+□ 사용전략
+ - 전체 알고리즘의 변경 -> Sterategy(전략) 패턴 활용
+ - 일부 알고리즘의 변경 -> Template 패턴 활용
+
+
+# [8장. Iterator 패턴]
+□ 개요
+ - (=커서)
+ - 다른 오브젝트를 담고있는 aggregate 오브젝트 내부를 접근 (내부를 노출시키지 않으면서)
+
+□ 등장배경
+ - 인터페이스가 아닌 구현에 따른 코딩
+ - 코드의 수정이 많음
+ - 유사한 코드가 반복이 됨
+
+□ 디자인
+ - Iterator 를 호출 동작 중간에 두어 
+ - 클라이언트 입장에서는 access 하는 오브젝트의 자료구조에 상관없이 동일한 명령어로 호출가능
+
+□ Java's iterator (import java.util.Iterator)
+ - boolean hasNext()
+ - object next()
+ - void remove()
+
+□ SRP 와 연관성
+ - 보관하는 것과 꺼내는 것은 다른 목적 -> 다른 클래스로 나눠야 함
+ - Cohesion(응집도) 를 높임
+
+□ 연관된 패턴
+ - Composit 패턴, Visitor 패턴
+ - Factory Method 패턴
+ - Memento 패턴 : 오브젝트의 특정상황을 보관
+
+
+
+# [9장. State 패턴]
+□ 목적
+ - behavior 가 상황별로 다르게 반응 해야 할때
+ - 현재상태를 반응하는 로직을 간결하게 해결
+
+□ 디자인
+ - 'state' interface를 정의
+ - 모든 객체의 상태에 대한 state class 를 implement
+ - 각 상태의 코드를 지우고 그 역할을 state object에게 위임
+ - OCP 와 연관
+ - stae 가 바뀔때마다 behavior 가 변화
+ 
+□ 주요 개선점
+ - 각 스테이트의 behavior 가 각각 독립
+ - 상태 state를 제거
+ - 새로운 state 추가시에도 확장 가능
+ - 이해가 쉬워짐
+
+□ 단점
+ - 각 state 가 객체로 만들어져야 하기 때문에 객체의 갯수가 증가
+
+□ state vs strategy
+ - 클래스 다이어그램 측면에서는 차이가 없음
+ - 목적/의도가 각기 다름
+ - state : state에 dependency 를 캡슐화. 외부 자극에 따라 state가 계속 변경.
+ - strategy : 알고리즘을 캡슐화. 처음 전략이 거의 끝까지 유지됨
+
+□ 이슈
+ - 누가 state 를 define 할것인가
+   1. context 클래스 : 간단한 상황에서 적합
+   2. concrete 클래스 : 일반적
+ - 언제 concretestate 오브젝트를 만들것인가
+   1. 필요할때 (런타임 중간에 동적으로)
+   2. 처음부터 레퍼런스를 가지고 있음
+
+□ 비교
+ - state 패턴 : 상태 기반 동작을 캡슐화하고 동작을 현재 상태에 위임합니다.
+ - strategy 패턴 : 교환 가능한 동작을 캡슐화하고 위임을 사용하여 사용할 동작을 결정합니다.
+ - template method : 하위 클래스는 알고리즘에서 단계를 구현하는 방법을 결정합니다.
+
+
+# [10장. Mediator 패턴]
+□ 목적
+ - 다양한 객체들의 복잡한 커뮤니케이션을 mediator 가 캡슐화
+ - 객체간 관계가 많고 복잡할 때 컨트롤 타워 역할
+ - N^2 의 커뮤니케이션을 N 으로 변경 
+
+□ 구조
+ - 참여자 끼리는 커뮤니케이션이 없음
+ - 중재자와 참여자 간 커뮤니케이션만 있음
+ - 객체가 자신의 변화를 mediator 에게 알림
+
+□ 장단점
+ - 장) 커뮤니케이션의 흐름을 이해하기 쉽다
+ - 단) 특정 어플리케이션에 종속/특화될 수밖에 없다 -> code 재사용이 불가능 
+ - observer 패턴과 특징이 반대
+
+□ observer
+ - 재사용성 높음
+ - 이해가 어려움
+ - 옵저버와 종속객체의 사용으로 커뮤니케이션이 분산됨
+
+□ midiator
+ - 커뮤니케이션 캡슐화
+ - 재사용 어려움
+ - 커뮤니케이션 이해 쉬움
+
+
+# [11장. Factory 패턴]
+□ 목적
+ - new 연산자를 대신해 object를 생성하는 방법 (new 는 concreate class 를 가질 수 밖에 없기 때문에)
+ - 클라이언트를 변경하지 않도라도 객체를 변경가능
+ - 생성 패턴 : factory, abstract, singleton, builder, prototype
+
+□ Factory method
+ - Inheritance 를 사용
+ - class scope
+ - 객체를 생성하는 부분 (변경이 자주 있는 부분) 을 추상클래스로 만들고 하위 클래스가 각 특성에 맞는 클래스의 객체로 생성
+ - 오브젝트를 만드는 method 를 노출하고, 서브클래스가 그 일을 하게 함
+ - 프레임워크를 사용하는 사용자는 부모 클래스를 implementation 하여 서브클래스를 만들어 사용함
+ - DIP 를 준수
+
+□ Abstract Factory
+ - Create 과정을 Delegate(위임) 한다
+ - Factory method 보다 높은 추상화 개념, object scope
+ - composition 과 delegation 을 사용
+ - 제 3의 생성Factory 에게 위임 (절대 직접 만들지 않는다)
+ - products를 여러개 Family로 만들경우 유용
+ - 특정 테마군이 필요시
+ - 장) concrete class 가 독립적, product family를 쉽게 변경, product 일관성, factory 확장이 쉬움
+ - 단) 새로운 종류의 product 지원이 어려움
+ - 일반적으로 Factory Method를 사용. Prototype 도 가능
+ - 초기에는 Factory Method로 시작하고, 추후 다른 것들로 (Abstract Factory, Protytype) 확장 
+
+
+# [12장. Builder 패턴]
+□ 목적
+ - 쉽게 알고리즘을 교체하면서 객체를 생성하기 위한 패턴
+ 
+□ 구성요소 
+ - Client, Director, Builder(추상), Concrete Builder, Product
+ 
+□ 구조
+ - Director : 어떤 파트가 필요한지 알고있음, Builder 에서 지시
+ - Concreate Builder : 어떻게 파트를 만들고 추가할 수 있는지 알고있음
+ - 각 파트는 클라이언트에게 노출되지 않음
+ - 파트가 다 합쳐진 Product 가 의미가 있지, 개별 파트로는 무의미함
+
+□ 특징
+ - 인터페이스가 변화하지 않고 안정적이어야 Builder 의 효용이 있다
+ - composite 패턴과 조합하여 사용
+ - builder 패턴은 전략패턴의 특수한 형태라고 볼 수 있다
+
+
+# [13장. Singleton 패턴]
+□ 목적
+ - 단 하나의 인스턴스만을 만들도록 보장하는 경우 사용 (Fix된 숫자만큼)
+ - 인스턴스가 한개만 있는게 좋은 시스템 (프린터 스풀러 등)에 적용
+
+□ 특징
+ - 목적은 단순하나 implement 때문에 복잡해짐 
+
+□ 사용법
+ - 생성자 new를 사용하지 않고
+
+□ 디자인 핵심
+ - private Singleton() {}     >> private : 외부에서 new 로 생성불가, 모든 클래스는 constructor(생성자) 가 있어야 외부에서 생성가능
+ - public static Singleton getInstance()    >> static : 객체가 없을때에도 method 를 호출, public : 외부에서 호출
+ - private static Sington uniqueInstance    >> private : 외부에서 uniqueInstance 를 변경하지 못하도록
+ - if (uniqueInstance == null); uniqueInstance = new Singleton();   >> unique 한 경우만 생성
+
+□ 멀티스레드
+ - 문맥교환 타이밍 때문에 unique 한 인스턴스를 만들지 못하는 경우가 발생
+
+□ 멀티스레드 해결 아이디어
+ 1. getInstance() 메소드에 synchronized 키워드로 임계구역 생성
+  - 여러 스레드가 getinstance() 메소드를 동시에 호출하지 못하게 막는다
+  - 단점: 여러 스레드가 불필요한 경쟁을 계속 수행한다. 과도한 locking 오버헤드. 성능측면에서 아쉬움
+ 2. uniqueInstance 정의할때 new로 아예 생성해버린다.
+  - locking 오버헤드 없음
+  - 단점: 요청하기도 전에 미리 만들어버리기 때문에 메모리사용 측면에서 좋지않음. 전역변수를 생성한것과 마찬가지
+ 3. 더블체킹
+  - 바깥if문 : 아예 진입 못한애들을 체크한다
+  - synchronized : 먼저 진입한애가 선점
+  - 안쪽if문 : 바깥 if문을 통화한 애들 중에서 체크
+  - new : 먼저 진입한애가 new
+ 
+□ Java에서 더블체킹 이슈
+ - A스레드에서 생성자가 완료되기 전 동작하는 과정에서 B스레드는 완료된 줄 알고 그 인스턴스를 사용 > 희귀한 케이스
+
+□ 최종 버전 (더블체킹 안정화 버전)
+ - volatile 키워드를 사용
+ - java 버전에 따라 다르게 인식 (1.4버전 이후부터 volatile 키워드를 보장됨)
+
+□ 현실
+ - 3번 더블체킹 안정화 버전은 복잡하기 때문에 2번 방법으로도 많이 사용
+
+
+# [14장. Decorator 패턴]
+□ 목적: 이미 존재하는 객체의 responsibility와 behavior를 수정하기 위해 다이나믹하게 warpping
+        기존 객체를 덮어씌워 기존에 없던 내용을 추가해줌
+        
+□ 원리:
+ - OCP 적용. 하지만 OCP의 단점인 복잡성 때문에 적절하게 조절해야 함
+ - (((DarkRoast) Mocha) Whip)
+ - 각 클래스 제공 외 새로운 hehavior 를 추가
+ - 여러번 wrapping 가능
+ - decorator는 decorate 하고 싶은 객체와 같은 super type 을 가져야 함 (꾸미려는 대상과 동일한 부모클래스를 가짐)
+ - runtime 에 다이나믹하게 decorate 가능
+ - composition 과 delegation 을 사용
+
+□ 디자인
+ - 1개의 decorator 당 1개의 component (associate), multiple 은 1
+ - decorator 는 component를 상속받는다 (inheritance)
+ - associate 와 inheritance 둘다 필요
+
+□ 상속
+ - 상위 컴포넌트를 상속함으로서 decorate pointer 를 활용범위를 넓힐 수 있다. (유연성제공)
+
+□ 장점
+ - 확장성이 좋다
+ - 기존 코드의 수정이 필요없다
+
+□ 단점
+ - 이해가 어려움
+ - 복잡, 코드스멜 야기
+
+□ 연관성
+ - Adapter 패턴 : 다른 인터페이스를 제공
+ - Proxy 패턴 : 같은 인터페이스를 제공
+ - Decorator 패턴 : 향상된 인터페이스를 제공
+
+
+# [15장. Adapter 패턴]
+□ (=Wrapper)
+
+□ 목적
+ - 서로 다른 인터페이스의 객체가 서로 이어질 수 있게 함
+
+□ 매카니즘
+ - 타겟인터페이스 (클라이언트가 기대하는 인터페이스)
+ - adaptee 인터페이스 (변환 필요한 인터페이스)
+ - 클라이언트는 어댑터가 번역한 내용을 받음
+
+□ 구현예제
+ - Duck turkeyadapter = new turkeyadapter(turkey)  : turkey 를 주고 duck 을 받는다
+
+□ 종류
+ - Object Adapter : object composition 과 delegation 활용 (객체 scope)
+ - Class Adapter : inheritance 를 활용 (class scope)
+
+□ 특징
+ - 단순히 이름만 바꾸는 전환도 있고, 다양하게 많이 바뀌는 경우도 있다
+ - 양방향으로로 동작할 수 있다
+
+
+# [16장. Composite(합성) 패턴]
+□ 목적
+ - 계층(Tree)을 가진 객체가 하위 element 유무와 상관없이 동일한 인터페이스를 가지도록 생성
+ - Tree 의 계층 위치에 상관없이 동일하게 사용
+ 
+□ 디자인
+ - Client 는 Component 로 호출
+ - Component에 여러 계층의 객체들(leaf 와 composite) 이 동등하게 연결됨
+ - 다형성을 이용해 어떤 계층을 호출하던지 동일한 메소드를 실행하고 결과는 계층에 따라 달라짐
+ - 자료구조에 상관없이 호출가능한 iterator(반복자) 를 생성
+ - 일반적으로는 iterator를 생성하는것으로 작성,
+ - 만약 leaf라면 nulliterator를 호출 (실제로는 불필요한 기능이지만 동일한 구조를 만들기 위해)
+
+□ 자식노드를 컨트롤 위한 mgt 인터페이스의 위치는
+ 1. 상위 컴포넌트 클래스에 매소드를 위치
+   - 장점) transparency (투명성)을 제공
+   - 단점) 컴포넌트 클래스에서 exception을 구현해야 함. 잘못된 부분을 컴파일시 발견할 수 없고 런타임에만 알 수 있음
+ 2. 상위 컴포넌트 클래스에는 공통매소드만 위치, 하위 composite에 mgt 인터페이스 위치
+   - 장점) safety (안전), 컴파일타임에 에러발견가능
+   - 단점) 투명성을 잃는다 (leaf와 coposite가 다른 인터페이스를 갖는다)
+
+□ 연관패턴 (decorator 패턴)
+ - 공통점 : 재귀적 구조
+ - decorator 패턴 : 이미존재하는 객체에 대해 resposibility를 가진 객체를 감싼다
+ - composite 패턴 : tree 모양의 계층적 구조를 표현하는 수단
+  >> 혼용하여 사용
+ 
+□ 연관패턴 (Itorator 패턴)
+ - 공통점 : 내부를 노출시키지 않는다
+
+
+# [17장. Bridge 패턴]
+□ 목적
+ - 구현적 개체 구조와는 독립적으로 추상적 개체 구조를 정의 (두가지를 구분)
+ - 이를통해 결합도를 낮춤
+ - 프로그램의 결합이 복잡해질수록 클래스의 갯수가 너무 많아짐 -> 이를 해결하기 위한 패턴
+ - 큰 두가지 클래스를 2가지 계층적으로 나눔
+
+□ 문제상황
+ - 클래스 갯수의 폭발적 증가
+ - 추상화(종류의 다양성) 과 구현(수행방식)간에 결합도가 높음
+
+□ 해결방안
+ - 추상화(개념)의 변화와 구현의 변화를 분리
+ - 공통점은 추상클래스로 선언, 변경사항은 일반클래스로 구현 
+
+□ 구조
+ - abstraction(추상개념) : 고차원의 컨트롤 layer, 클라이언트는 여기로 접근
+ - implementor(구현) : 실제 동작 부분 (플랫폼)
+ - 둘간 연결은 composition 으로 연결 (implementor는 abstraction의 일부분, abstraction가 implementor를 사용)
+
+□ Adapter 패턴과 비교
+ - 공통점 : 구현부분을 숨김, 구조적 문제를 해결
+ - 차이점 
+   . adapter : 디자인된 이후 문제 발생시 이를 해결(reengineering), 간단한 문제를 해결
+   . bridge : 디자인 하기 전에 대비를 위해 사용. 복잡한 개념에 대한 구조를 정의
+
+
+# [18장. MVC 패턴]
+□ 특징
+ - 아키텍처 패턴, 디자인패턴
+ - 여러 디자인을 모아서 적용
+ - 일반적으로 strategy, observer, composite 3가지 패턴 조합
+
+□ 구성
+ - Model : 어플 자체 기능 로직, 알고리즘, 데이터
+ - View : 화면 출력, UI 입출력
+ - Controller : View를 제어, UI 내부로직수행
+
+□ 아키텍처
+ - Model (Non UI) 은 view, controller 를 거의알지 못함 (옵저버패턴) -> 약한 결합도
+ - View, Controller (UI)는 Non UI보다 변경이 잦다
+ - View와 Controller는 어느정도는 결합을 허용 (둘간 경계가 모호한 경우도 있음)
+
+□ 배경
+ - 같은 데이터를 여러 다른 표현방식으로 보여질 수 있음
+ - 여러 다른 방식으로 데이터가 변경 될 수 있음
+
+□ 해결책
+ - responsibilities 를 model, view, controller 로 분리
+
+□ 활용패턴
+ - observer패턴 : UI, Non UI 분리하여 결합도 낮춤, observer(view), observable(model)
+ - composite패턴 : UI 구현방식
+ - strategy패턴 : view와 컨트롤러 간 관계 (위임)
+
+□ 노트
+ - UI를 바꿔도 Model 재사용 가능
+ - 모델 자체만으로 테스트 가능
+ - 모델 알고리즘 속도 중요
+
+
+# [19장. Pattern Summary]
+□ 다지인패턴
+ - 시스템을 특정 방법을 통해 쉽게 변화할 수 있도록 돕는다
+ - 변화를 예측하여 대비한다
+
+□ 패턴 유형
+ 1. creating object
+ - 클라이언트는 추상/인터페이스 클래스만 접근하여 concreate 클래스의 변경에 상관없도록
+ - Abstract Factory, Factory Method, Builder, Singleton
+
+ 2. HW/SW 변경 종속성
+ - 다른 플랫폼에 포팅, 확장을 쉽게 할수 있도록
+ - Bridge, Abstract Factory
+
+ 3. 알고리즘 종속성
+ - 알고리즘 변경이 object 변경에 영향 없도록
+ - Builder, Iterator, Strategy, Template Method
+ 
+ 4. 서브클래스 통한 기능확장
+ - subclassing을 통하면 클래스 갯수가 많아지는 현상을 극복위함
+ - Bridge, Composite, Decorator, Strategy
+
+ 5. 기존 클래스 수정이 어려움
+ - 쉽게 클래스의 변경이 어려울 경우에 활용
+ - Adapter, Decorator
